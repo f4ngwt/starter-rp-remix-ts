@@ -18,7 +18,7 @@ Welcome to the React PDF Starter Toolkit! This repository provides a comprehensi
 1. **Clone the Repository**: If you haven't already, clone the repository and navigate into the project directory.
 
    ```bash
-   git clone https://github.com/react-pdf-kit/starter-rp-remix-ts
+   git clone https://github.com/react-pdf-kit/starter-rp-remix-ts.git
    cd starter-rp-remix-ts
    ```
 
@@ -81,15 +81,9 @@ export const AppPdfViewer = (props: Props) => {
       src="https://cdn.codewithmosh.com/image/upload/v1721763853/guides/web-roadmap.pdf"
       {...providerProps}
     >
-      {showToolbar ? (
-        <RPLayout toolbar {...defaultLayoutProps}>
-          <RPPages />
-        </RPLayout>
-      ) : (
-        <div style={{ width: "100%", height: "550px" }}>
-          <RPPages />
-        </div>
-      )}
+      <RPLayout toolbar={showToolbar} {...defaultLayoutProps}>
+        <RPPages />
+      </RPLayout>
     </RPProvider>
   );
 };
